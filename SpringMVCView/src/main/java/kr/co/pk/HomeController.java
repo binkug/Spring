@@ -48,5 +48,23 @@ public class HomeController {
 		return "excel";
 	}
 	
+	//엑셀로 출력하는 요청을 처리하는 메소드
+	@RequestMapping(value = "pdf.pdf" , method = RequestMethod.GET)
+	public String pdf(HttpServletRequest request , HttpServletResponse response,Model model) {
+		//아이템 테이블의 데이터를 전부 읽어오는 서비스를 호출
+		itemServive.allitem(request, response);
+		model.addAttribute("list",request.getAttribute("list"));
+		return "pdf";
+	}
+	
+	//엑셀로 출력하는 요청을 처리하는 메소드
+	@RequestMapping(value = "item.json" , method = RequestMethod.GET)
+	public String json(HttpServletRequest request , HttpServletResponse response,Model model) {
+		//아이템 테이블의 데이터를 전부 읽어오는 서비스를 호출
+		itemServive.allitem(request, response);
+		model.addAttribute("list",request.getAttribute("list"));
+		return "itemlist";
+	}
+	
 	
 }

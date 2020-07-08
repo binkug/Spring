@@ -39,6 +39,14 @@
 			<!-- 엑셀,pdf로 만들 경우에는 xls xlsx 각자의 맞는 같은 확장자를 써줘야 한다 -->
 			<li><a href="item.xls" class="menu">엑셀 출력</a>
 		</ul>
+		<ul>
+			<!-- 엑셀,pdf로 만들 경우에는 xls xlsx 각자의 맞는 같은 확장자를 써줘야 한다 -->
+			<li><a href="pdf.pdf" class="menu">PDF 출력</a>
+		</ul>
+		<ul>
+			<!-- 엑셀,pdf로 만들 경우에는 xls xlsx 각자의 맞는 같은 확장자를 써줘야 한다 -->
+			<li><a href="item.json" class="menu">item JSON 출력</a>
+		</ul>
 	</div>
 </body>
 </html>

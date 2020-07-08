@@ -36,5 +36,10 @@
 	<beans:bean id="download" class="kr.co.pk.view.DownloadView" />
 	<!-- excel 출력 설정 -->
 	<beans:bean id="excel" class="kr.co.pk.view.ExcelView" />
+	<!-- pdf 출력 설정 -->
+	<beans:bean id="pdf" class="kr.co.pk.view.PdfView" />
+	
+	<!-- json 출력 설정 -->
+	<beans:bean id="itemlist" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
 	
 </beans:beans>
