@@ -7,20 +7,21 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import kr.co.pk.item.dao.ItemDAO;
 import kr.co.pk.item.dao.ItemMapper;
 import kr.co.pk.item.domain.Item;
 
 @Service
 public class ItemServiceImpl implements ItemService {
-	//ServiceImpl 클래스에서 ItemDAO를 가지고 작업을 하면 XML 파일을 사용 하는 것이고 MyBatis를 ㅅ
 	@Autowired
-	//private ItemDAO itemDao;
+	private ItemDAO itemDao;
 	
-	private ItemMapper itemDao;
+	//private ItemMapper itemDao;
 
 	@Override
 	@Transactional
@@ -58,18 +59,19 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public void fileview(HttpServletRequest request, HttpServletResponse response) {
-		//프로젝트  내의 디렉토리에 대한 절대 경로 가져오기
-		String imgPath = request.getServletContext().getRealPath("/img");
-		
-		//디렉토리 안의 모든 파일에 대한 이름을 가져오기 -File 클래스 이용
+		//프로젝트 내의 디렉토리에 대한 절대 경로 가져오기
+		String imgPath = 
+				request.getServletContext().getRealPath("/img");
+		//디렉토리 안의 모든 파일에 대한 이름을 가져오기 - File 클래스 이용
 		File f = new File(imgPath);
 		String [] fileList = f.list();
 		
-		//파일 이름을 List에 저장하고 List를 request에 저장
+		//파일이름을 List에 저장하고 List를 request에 저장
 		List<String> list = new ArrayList<String>();
 		for(String imsi : fileList) {
 			list.add(imsi);
 		}
+		//출력할 데이터 저장
 		request.setAttribute("list", list);
 		
 	}

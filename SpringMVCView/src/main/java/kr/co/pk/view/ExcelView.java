@@ -15,15 +15,16 @@ import org.springframework.web.servlet.view.document.AbstractXlsView;
 import kr.co.pk.item.domain.Item;
 
 public class ExcelView extends AbstractXlsView {
-	
+
 	//workbook은 출력할 엑셀 파일
 	@Override
-	protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request,
+	protected void buildExcelDocument(
+			Map<String, Object> model, 
+			Workbook workbook, 
+			HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		
-		//출력할 데이터 갖오기
-		List<Item> list = (List<Item>) model.get("list");
-		
+		//출력할 데이터 가져오기
+		List<Item> list = (List<Item>)model.get("list");
 		//시트를 생성
 		Sheet sheet = workbook.createSheet("ITEM");
 		
@@ -45,11 +46,11 @@ public class ExcelView extends AbstractXlsView {
 		cell.setCellValue("상품 설명");
 		
 		cell = firstRow.createCell(2);
-		cell.setCellValue("상품 가격");
+		cell.setCellValue("가격");
 		
 		//데이터 출력
 		
-		//행 번호를 저장할 변수
+		//행번호를 저장할 변수
 		int rowNum = 1;
 		for(Item item : list) {
 			//행을 생성
@@ -62,9 +63,11 @@ public class ExcelView extends AbstractXlsView {
 			c.setCellValue(item.getDescription());
 			
 			c = row.createCell(2);
-			c.setCellValue(item.getPrice()+"원");
+			c.setCellValue(item.getPrice() + "원");
 		}
-
+		
 	}
 
 }
+
+

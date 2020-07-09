@@ -21,15 +21,12 @@ public class ItemDAO {
 	
 	//Item 테이블의 전체 데이터를 가져오는 메소드
 	public List<Item> allitem(){
-		//하이버네이트를 사용하려면 그대로 두고 MyBatis를 사용하려면 메소드 안의 주석을 해제하고 하이버네이트 호출 구문을 주석 처리
-		//return sqlSession.selectList("item.allitem");
-		return sessionFactory.getCurrentSession()
-			.createCriteria(Item.class).list();
+		return sqlSession.selectList("item.allitem");
+		//return sessionFactory.getCurrentSession().createCriteria(Item.class).list();
 	}
 	//Item 테이블에서 1개의 데이터를 가져오는 메소드
 	public Item detailitem(Integer itemid) {
-		//return sqlSession.selectOne("item.detailitem", itemid);
-		return sessionFactory.getCurrentSession()
-				.get(Item.class, itemid);
+		return sqlSession.selectOne("item.detailitem", itemid);
+		//return sessionFactory.getCurrentSession().get(Item.class, itemid);
 	}
 }

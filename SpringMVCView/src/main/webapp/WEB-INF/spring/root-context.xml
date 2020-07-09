@@ -9,7 +9,6 @@
 	
 	<!-- 데이터베이스 접속 정보를 저장하는 bean을 생성 
 	데이터베이스 종류 별로 설정 -->
-
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
@@ -25,7 +24,8 @@
 			<value>********</value>
 		</property>
 	</bean>
-<!-- 
+	
+	 <!-- 
 	 <bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName">
@@ -42,7 +42,7 @@
 			<value>*******</value>
 		</property>
 	</bean>
--->
+	  -->
 	 
 	<!-- XML을 이용한 MyBatis 사용 설정 -->
 	<bean id="sqlSessionFactory"

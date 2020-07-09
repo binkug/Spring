@@ -30,7 +30,7 @@ public class ItemTest {
 	
 	@Test
 	public void detailitem() {
-		System.out.println(sqlSession.selectOne("item.detailitem",1));
+		//System.out.println(sqlSession.selectOne("item.detailitem",1));
 	}
 	
 	//데이터베이스 연결을 테스트

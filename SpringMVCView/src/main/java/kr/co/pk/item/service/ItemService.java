@@ -9,11 +9,17 @@ import javax.servlet.http.HttpServletResponse;
 //상황에 따라 다르게 만들 수 도 있습니다.
 public interface ItemService {
 	//전체 데이터를 가져오는 메소드
-	public void allitem(HttpServletRequest request, HttpServletResponse response);
+	public void allitem(
+			HttpServletRequest request, 
+			HttpServletResponse response);
 	
 	//상세보기를 위한  메소드
-	public void detailitem(HttpServletRequest request, HttpServletResponse response);
+	public void detailitem(
+			HttpServletRequest request, 
+			HttpServletResponse response);
 	
-	//img 디렉토리의 파일이름 목록을 가져오기 위한 메소드
-	public void fileview(HttpServletRequest request, HttpServletResponse response);
+	//img 디렉토리의 파일이름 목록을 가져오기 위한  메소드
+	public void fileview(
+				HttpServletRequest request, 
+				HttpServletResponse response);
 }

@@ -1,6 +1,5 @@
 package kr.co.pk.view;
 
-
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +21,12 @@ import kr.co.pk.item.domain.Item;
 public class PdfView extends AbstractPdfView {
 
 	@Override
-	protected void buildPdfDocument(Map<String, Object> model,Document document,PdfWriter writer,HttpServletRequest request,HttpServletResponse response) throws Exception {
+	protected void buildPdfDocument(
+			Map<String, Object> model, 
+			Document document, 
+			PdfWriter writer,
+			HttpServletRequest request, 
+			HttpServletResponse response) throws Exception {
 		//데이터 가져오기
 		List<Item> list = (List<Item>)model.get("list");
 		
@@ -74,3 +78,7 @@ public class PdfView extends AbstractPdfView {
 	}
 
 }
+
+
+
+

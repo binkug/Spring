@@ -28,12 +28,18 @@ public class ItemController {
 		return "home";
 	}
 	
-	@RequestMapping(value = {"detail/{itemid}"}, method = RequestMethod.GET)
-	public String detail(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(
+			value = {"detail/{itemid}"}, 
+			method = RequestMethod.GET)
+	public String detail(
+			HttpServletRequest request, 
+			HttpServletResponse response) {
 		//서비스의 메소드를 호출
 		itemService.detailitem(request, response);
 		return "detail";
 	}
+	
+	
 	
 }
 
