@@ -21,8 +21,9 @@ public class ItemDAO {
 	
 	//Item 테이블의 전체 데이터를 가져오는 메소드
 	public List<Item> allitem(){
-		return sqlSession.selectList("item.allitem");
+		//return sqlSession.selectList("item.allitem");
 		//return sessionFactory.getCurrentSession().createCriteria(Item.class).list();
+		return sessionFactory.getCurrentSession().createSQLQuery("select * from item").list();
 	}
 	//Item 테이블에서 1개의 데이터를 가져오는 메소드
 	public Item detailitem(Integer itemid) {
