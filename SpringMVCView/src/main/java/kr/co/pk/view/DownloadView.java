@@ -16,8 +16,7 @@ public class DownloadView extends AbstractView {
 	//생성자
 	public DownloadView() {
 		//형식을 설정
-		setContentType(
-			"application/download; charset=utf-8");
+		setContentType("application/download; charset=utf-8");
 	}
 	
 	//출력할 뷰를 그리는 메소드
