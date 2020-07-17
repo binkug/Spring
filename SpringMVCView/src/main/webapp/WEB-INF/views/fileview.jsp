@@ -12,6 +12,7 @@
 	<div align="center" class="body">
 		<h2>파일 목록</h2>
 		<table border="1">
+			<!-- items에 있는 ${list}가 serviceimpl에 있는 것과 같아야 한다.ㄴ  --> 
 			<c:forEach var="item" items="${list}">
 				<tr>
 					<!-- <td><a href="${pageContext.request.contextPath}/img/${item}">${item}</a></td> -->
